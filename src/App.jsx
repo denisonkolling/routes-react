@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import RoutesApp from './routes';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 
 function App() {
 	return (
 		<>
-			<h1>Welcome!</h1>
+			<RoutesApp />
 		</>
 	);
 }
