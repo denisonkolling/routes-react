@@ -1,26 +1,35 @@
 import { Button, Input } from '../../components';
 import { useState } from 'react';
-import {
-	Content,
-	Label,
-	LabelError,
-	LabelSignin,
-	Strong,
-	Container,
-} from './styles';
+import { useAuth } from "../../context/AuthContext"
+import { Content, Label, LabelError, LabelSignin, Strong, Container } from './styles';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaRoute } from 'react-icons/fa';
+import { apiLogin } from "../../services/api"
 
-const Login = () => {
+const Signin = () => {
+	const { login } = useAuth()
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [message, setMessage] = useState('');
 	const navigate = useNavigate();
 
-	const handleLogin = () => {
-		console.log('Login');
-		navigate('/home');
-	};
+	const handleSignin = async (event) => {
+		event.preventDefault()
+
+		try {
+				const response = apiLogin(email, password)
+				if (response.success) {
+						login(response)
+						navigate('/home')
+				} else {
+					setMessage(response);
+					return;
+				}
+
+		} catch (error) {
+				console.log(error)
+		}
+}
 
 	return (
 		<Container height="100vh">
@@ -46,7 +55,7 @@ const Login = () => {
 					onChange={(e) => [setPassword(e.target.value), setMessage('')]}
 				/>
 				<LabelError>{message}</LabelError>
-				<Button Text="Sign In" color="#2F9B2C" onClick={handleLogin}></Button>
+				<Button Text="Sign In" color="#2F9B2C" onClick={handleSignin}></Button>
 				<LabelSignin>
 					Don't have an account?
 					<Strong>
@@ -58,4 +67,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default Signin;

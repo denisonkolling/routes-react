@@ -72,7 +72,7 @@ const Signup = () => {
 				<LabelSignup>
 					Already have an account?
 					<Strong>
-						<Link to="/login">&nbsp;Sign In</Link>
+						<Link to="/signin">&nbsp;Sign In</Link>
 					</Strong>
 				</LabelSignup>
 			</Content>
