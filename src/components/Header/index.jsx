@@ -1,15 +1,27 @@
 import React from 'react';
-import { Container, HeaderLink } from './styles';
+import { Container, HeaderItem, HeaderLink, HeaderLogoLink } from './styles';
 import { FaRoute } from 'react-icons/fa';
+import { useAuth } from '../../context/AuthContext';
+import { FaRightFromBracket } from 'react-icons/fa6';
 
 const Header = () => {
+	const { logout } = useAuth();
+
 	return (
 		<Container>
-			<HeaderLink>
-				{' '}
-				<FaRoute />&nbsp;          
-				React Routes
-			</HeaderLink>
+			<HeaderItem>
+				<HeaderLogoLink>
+					{' '}
+					<FaRoute />
+					&nbsp; React Routes
+				</HeaderLogoLink>
+			</HeaderItem>
+			<HeaderItem>
+				<HeaderLink to="/signin" onClick={logout}>
+					<FaRightFromBracket />
+					<span>&nbsp;Logout</span>
+				</HeaderLink>
+			</HeaderItem>
 		</Container>
 	);
 };
