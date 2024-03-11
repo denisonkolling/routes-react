@@ -21,6 +21,7 @@ export const Container = styled.aside`
 `;
 
 export const NavbarLink = styled(Link)`
+	font-family: ${(props) => props.theme.fonts.regular};
 	display: flex;
 	align-items: center;
 	height: 45px;
@@ -28,7 +29,6 @@ export const NavbarLink = styled(Link)`
 	color: #2d2d34;
 	padding-left: 15px;
 	box-sizing: border-box;
-	font-family: Inter, sans-serif;
 	transition: all 0.5s ease;
 	text-decoration: none;
 	border-left: 5px solid transparent;
@@ -52,6 +52,7 @@ export const NavbarLink = styled(Link)`
 `;
 
 export const Span = styled.span`
+	font-family: ${(props) => props.theme.fonts.regular};
 	letter-spacing: 0.6px;
 	font-weight: 500;
 	margin-left: 10px;

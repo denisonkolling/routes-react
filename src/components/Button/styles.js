@@ -13,7 +13,7 @@ export const ButtonStyled = styled.button`
   font-size: 16px;
   max-width: 350px;
   letter-spacing: 1px;
-  font-family: Roboto, sans-serif;
+  font-family: ${(props) => props.theme.fonts.regular};
 
   &:hover{
     opacity: 0.75;

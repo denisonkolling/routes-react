@@ -18,7 +18,7 @@ export const Container = styled.header`
 
 export const HeaderLogoLink = styled(Link)`
 	color: #2d2d34;
-	font-family: Inter, sans-serif;
+	font-family: ${(props) => props.theme.fonts.regular};
 	text-decoration: none;
 	font-size: 20px;
 	font-weight: 600;
@@ -26,7 +26,7 @@ export const HeaderLogoLink = styled(Link)`
 
 export const HeaderLink = styled(Link)`
 	color: #2d2d34;
-	font-family: Inter, sans-serif;
+	font-family: ${(props) => props.theme.fonts.regular};
 	text-decoration: none;
 	font-size: 14px;
 	font-weight: 600;

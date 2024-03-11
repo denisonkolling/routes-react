@@ -7,7 +7,7 @@ const theme = {
     logo: '#2F9B2C',
   },
   fonts: {
-    regular: 'Roboto, sans-serif',
+    regular: 'Inter, sans-serif',
   },
 };
 

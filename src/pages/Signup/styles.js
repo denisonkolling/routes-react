@@ -15,23 +15,27 @@ export const Content = styled.div`
 `;
 
 export const Label = styled.label`
+	font-family: ${(props) => props.theme.fonts.regular};
 	font-size: 18px;
 	font-weight: 600;
 	color: #676767;
 `;
 
 export const LabelSignup = styled.label`
+	font-family: ${(props) => props.theme.fonts.regular};
 	font-size: 16px;
 	color: #676767;
-  margin: 12px 0;;
+	margin: 12px 0;
 `;
 
 export const LabelError = styled.label`
+	font-family: ${(props) => props.theme.fonts.regular};
 	font-size: 14px;
 	color: red;
 `;
 
 export const Strong = styled.strong`
+	font-family: ${(props) => props.theme.fonts.regular};
 	cursor: pointer;
 
 	a {
