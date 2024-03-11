@@ -31,10 +31,11 @@ export const NavbarLink = styled(Link)`
 	font-family: Inter, sans-serif;
 	transition: all 0.5s ease;
 	text-decoration: none;
+	border-left: 5px solid transparent;
 
 	&:hover {
-		color: #fff;
-		background: linear-gradient(to left, grey, grey);
+		background-color: ${(props) => props.theme.colors.background};
+		border-left-color: ${(props) => props.theme.colors.logo};
 	}
 
 	@media (min-width: 480px) and (max-width: 1160px) {
