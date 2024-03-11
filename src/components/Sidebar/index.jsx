@@ -1,10 +1,20 @@
 import { NavbarLink, Span, Container } from './styles';
-import { useAuth } from "../../context/AuthContext"
-import { FaHouse, FaMap, FaRightFromBracket, FaUser, FaCloud } from 'react-icons/fa6';
+import { useAuth } from '../../context/AuthContext';
+import {
+	FaHouse,
+	FaMap,
+	FaRightFromBracket,
+	FaUser,
+	FaCloud,
+	FaMoon,
+} from 'react-icons/fa6';
 import { FaHiking } from 'react-icons/fa';
+import { ThemeContext } from '../../context/ThemeContext';
+import React, { useContext } from 'react';
 
 const Sidebar = () => {
-  const { logout } = useAuth()
+	const { logout } = useAuth();
+	const { theme, toggleTheme } = useContext(ThemeContext);
 
 	return (
 		<Container>
@@ -25,12 +35,16 @@ const Sidebar = () => {
 				<Span>Map</Span>
 			</NavbarLink>
 			<NavbarLink to="/users">
-				<FaUser/>
+				<FaUser />
 				<Span>Users</Span>
 			</NavbarLink>
 			<NavbarLink to="/signin" onClick={logout}>
 				<FaRightFromBracket />
 				<Span>Logout</Span>
+			</NavbarLink>
+			<NavbarLink onClick={toggleTheme}>
+				<FaMoon />
+				<Span>{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</Span>
 			</NavbarLink>
 		</Container>
 	);

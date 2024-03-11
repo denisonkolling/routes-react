@@ -1,17 +1,20 @@
-import { BrowserRouter as Router } from 'react-router-dom'
+import React, { useContext } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import RoutesApp from './routes';
-import theme from '../src/styles/theme';
-import lightTheme from '../src/styles/lightTheme';
-import darkTheme from '../src/styles/darkTheme';
+import GlobalStyles from '../src/styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyles from '../src/styles/globalStyles'
+import { lightTheme, darkTheme } from './styles/theme';
+import { ThemeContext } from './context/ThemeContext';
 
 function App() {
+
+	const { theme } = useContext(ThemeContext);
+
 	return (
 		<Router>
 			<GlobalStyles />
-			<ThemeProvider theme={darkTheme}>
-			<RoutesApp />
+			<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+				<RoutesApp />
 			</ThemeProvider>
 		</Router>
 	);
