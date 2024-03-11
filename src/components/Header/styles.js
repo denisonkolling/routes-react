@@ -7,7 +7,7 @@ export const Container = styled.header`
 	left: 0;
 	width: 100%;
 	height: 70px;
-	background-color: #F8F8F8;
+	background-color: ${(props) => props.theme.colors.background};
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -17,7 +17,7 @@ export const Container = styled.header`
 `;
 
 export const HeaderLogoLink = styled(Link)`
-	color: #2d2d34;
+	color: ${(props) => props.theme.colors.text};
 	font-family: ${(props) => props.theme.fonts.regular};
 	text-decoration: none;
 	font-size: 20px;
@@ -25,7 +25,7 @@ export const HeaderLogoLink = styled(Link)`
 `;
 
 export const HeaderLink = styled(Link)`
-	color: #2d2d34;
+	color: ${(props) => props.theme.colors.text};
 	font-family: ${(props) => props.theme.fonts.regular};
 	text-decoration: none;
 	font-size: 14px;

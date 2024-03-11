@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.aside`
-	background-color: #f9fafb;
+	background-color: ${(props) => props.theme.colors.background};
 	width: 200px;
 	height: 100vh;
 	position: fixed;
@@ -26,7 +26,7 @@ export const NavbarLink = styled(Link)`
 	align-items: center;
 	height: 45px;
 	width: 100%;
-	color: #2d2d34;
+	color: ${(props) => props.theme.colors.text};
 	padding-left: 15px;
 	box-sizing: border-box;
 	transition: all 0.5s ease;
@@ -34,7 +34,7 @@ export const NavbarLink = styled(Link)`
 	border-left: 5px solid transparent;
 
 	&:hover {
-		background-color: ${(props) => props.theme.colors.background};
+		background-color: ${(props) => props.theme.colors.hover};
 		border-left-color: ${(props) => props.theme.colors.logo};
 	}
 
@@ -53,6 +53,7 @@ export const NavbarLink = styled(Link)`
 
 export const Span = styled.span`
 	font-family: ${(props) => props.theme.fonts.regular};
+	color: ${(props) => props.theme.colors.text};
 	letter-spacing: 0.6px;
 	font-weight: 500;
 	margin-left: 10px;
