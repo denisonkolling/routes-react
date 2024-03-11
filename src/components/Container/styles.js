@@ -1,20 +1,20 @@
 import { styled } from 'styled-components';
 
 export const ContainerStyled = styled.div`
-	margin-left: 310px;
+	margin-top: 70px;
+	margin-left: 200px;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
 	gap: 10px;
+	flex-direction: column;
 	width: 100%;
-	height: ${(props) => props.height};
+	height: ${(props) => props.height|| 'calc(100vh - 70px)'};
+	background-color: ${(props) => props.color};
 
 	@media (min-width: 480px) and (max-width: 1200px) {
-		margin-left: 16%;
+		margin-left: 50px;
 	}
 	@media (max-width: 510px) {
+		margin-top: 120px;
 		margin-left: 0px;
-		margin-top: 50px;
 	}
 `;

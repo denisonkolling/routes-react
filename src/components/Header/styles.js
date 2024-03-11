@@ -2,9 +2,12 @@ import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.header`
-	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 	height: 70px;
-	background-color: #fefefe;
+	background-color: #F8F8F8;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -17,7 +20,7 @@ export const HeaderLogoLink = styled(Link)`
 	color: #2d2d34;
 	font-family: Inter, sans-serif;
 	text-decoration: none;
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 600;
 `;
 
@@ -25,7 +28,7 @@ export const HeaderLink = styled(Link)`
 	color: #2d2d34;
 	font-family: Inter, sans-serif;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: 600;
 `;
 
@@ -33,7 +36,7 @@ export const HeaderItem = styled.div`
 	box-sizing: border-box;
 	display: flex;
 	height: 70px;
-	width: 200px;
+	width: 160px;
 	justify-content: center;
 	align-items: center;
 	@media (max-width: 510px) {

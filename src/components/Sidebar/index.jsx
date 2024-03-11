@@ -1,7 +1,7 @@
 import { NavbarLink, Span, Container } from './styles';
 import { useAuth } from "../../context/AuthContext"
-import { FaHouse, FaStore, FaPrescriptionBottleMedical, FaMap, FaList, FaRightFromBracket, FaHouseMedical, FaUser, FaHouseFloodWaterCircleArrowRight, FaCloud } from 'react-icons/fa6';
-import { FaHiking, FaWpexplorer } from 'react-icons/fa';
+import { FaHouse, FaMap, FaRightFromBracket, FaUser, FaCloud } from 'react-icons/fa6';
+import { FaHiking } from 'react-icons/fa';
 
 const Sidebar = () => {
   const { logout } = useAuth()

@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext.jsx';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Home from '../pages/Home';
+import Weather from '../pages/Weather';
 
 const RoutesApp = () => {
 	const { isAuthenticated } = useAuth();
@@ -26,6 +27,7 @@ const RoutesApp = () => {
 				<>
 					<Route path="/" exact element={<Home />} />
 					<Route path="/home" element={<Home />} />
+					<Route path="/weather" element={<Weather />} />
 				</>
 			) : (
 				<Route path="*" element={<Navigate replace to="/signin" />} />

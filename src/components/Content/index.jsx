@@ -1,11 +1,9 @@
-import { ContentWrapper } from './styles';
+import { ContentStyled } from './styles';
 
-const Content = () => {
+const Content = ({ children, ...props }) => {
 	return (
 		<>
-			<ContentWrapper>
-				<h1>My content</h1>
-			</ContentWrapper>
+			<ContentStyled {...props}>{children}</ContentStyled>
 		</>
 	);
 };
