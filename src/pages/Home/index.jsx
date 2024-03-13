@@ -1,6 +1,5 @@
 import React from 'react';
-import { Sidebar, Header, Container, Wrapper, Content } from '../../components';
-// import { Content } from './styles';
+import { Sidebar, Header, Container, Wrapper, Content, Title } from '../../components';
 
 const Home = () => {
 	return (
@@ -9,7 +8,7 @@ const Home = () => {
 			<Sidebar />
 			<Container>
 				<Content>
-					<h1>Home Page</h1>
+					<Title>Home Page</Title>
 				</Content>
 			</Container>
 		</Wrapper>

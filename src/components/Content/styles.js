@@ -5,4 +5,8 @@ export const ContentStyled = styled.div`
 	height: 100vh;
 	background-color: ${(props) => props.theme.colors.background};
 	padding: 20px;
+
+	@media (max-width: 510px) {
+    padding: 10px;
+	}
 `;
