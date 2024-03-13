@@ -1,11 +1,17 @@
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {	Label,	LabelError,	Content,	Strong,	LabelSignup,	Container,} from './styles';
-import { FaHiking, FaCheck } from "react-icons/fa";
+import {
+	Label,
+	LabelError,
+	Content,
+	Strong,
+	LabelSignup,
+	Container,
+} from './styles';
+import { FaHiking, FaCheck } from 'react-icons/fa';
 import { Button, Input } from '../../components';
 
 const Signup = () => {
-	
 	const [email, setEmail] = useState('');
 	const [emailConf, setEmailConf] = useState('');
 	const [password, setPassword] = useState('');
@@ -14,21 +20,21 @@ const Signup = () => {
 	const navigate = useNavigate();
 
 	const handleSignup = () => {
-		if (!email | !emailConf | !password) {
-			setMessage('Preencha todos os campos');
+		if (!email || !emailConf || !password) {
+			setMessage('Fill in all fields');
 			return;
 		} else if (email !== emailConf) {
-			setMessage('Os e-mails não são iguais');
+			setMessage('Emails do not match');
 			return;
 		} else if (!checkEmail(email)) {
-			setMessage('Preencha email corretamente');
+			setMessage('Enter email correctly');
 			return;
 		} else if (!checkPassword(password)) {
-			setMessage('Senha deve conter no mínimo 8 números e letras!');
+			setMessage('Password must contain at least 8 numbers and letters!');
 			return;
 		}
 		// addUser(email, password);
-		setSuccess('Conta de usuário criada com sucesso!');
+		setSuccess('User account created successfully!');
 		cleanForm();
 
 		setTimeout(() => {
