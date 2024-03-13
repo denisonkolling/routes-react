@@ -1,4 +1,4 @@
-<h1 align="center">Customer API</h1>
+<h1 align="center">Trail Routes</h1>
 
 <p align="center">
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
