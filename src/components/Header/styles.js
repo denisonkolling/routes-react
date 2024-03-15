@@ -14,6 +14,7 @@ export const Container = styled.header`
 	padding: 0 20px;
 	color: white;
 	border-bottom: solid 1px ${(props) => props.theme.colors.line};
+	z-index: 1;
 `;
 
 export const HeaderLogoLink = styled(Link)`
