@@ -5,6 +5,7 @@ import Signup from '../pages/Signup';
 import Home from '../pages/Home';
 import Weather from '../pages/Weather';
 import Trails from '../pages/Trails';
+import Map from '../pages/Map';
 
 const RoutesApp = () => {
 	const { isAuthenticated } = useAuth();
@@ -30,6 +31,7 @@ const RoutesApp = () => {
 					<Route path="/home" element={<Home />} />
 					<Route path="/weather" element={<Weather />} />
 					<Route path="/trails" element={<Trails />} />
+					<Route path="/map" element={<Map />} />
 				</>
 			) : (
 				<Route path="*" element={<Navigate replace to="/signin" />} />

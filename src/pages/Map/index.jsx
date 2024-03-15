@@ -1,18 +1,18 @@
 import React from 'react';
 import { Sidebar, Header, Container, Wrapper, Content, Title } from '../../components';
 
-const Trails = () => {
+const Map = () => {
 	return (
 		<Wrapper>
 			<Header />
 			<Sidebar />
 			<Container>
 				<Content>
-					<Title>Trails</Title>
+					<Title>Map</Title>
 				</Content>
 			</Container>
 		</Wrapper>
 	);
 };
 
-export default Trails;
+export default Map;
