@@ -1,9 +1,14 @@
-import { CardStyled } from './styles';
+import { CardStyled, ImageSection, ContentSection } from './styles';
 
-const Card = ({ children, ...props }) => {
+const Card = ({ children, image, ...props }) => {
 	return (
 		<>
-			<CardStyled {...props}>{children}</CardStyled>
+			<CardStyled {...props}>
+				<ImageSection>
+					<img src={image} alt="Image description" style={{width: '100%',}}/>
+				</ImageSection>
+				<ContentSection>{children}</ContentSection>
+			</CardStyled>
 		</>
 	);
 };
