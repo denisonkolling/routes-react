@@ -1,7 +1,9 @@
 export const lightTheme = {
 	colors: {
 		primary: '#6200ee',
-		background: '#F8F8F8',
+		background: '#FFFFFF',
+		line: '#F0F0F0',
+		secondary: '#FAFAFB',
 		text: '#2C2738',
 		success: '#135E01',
 		logo: '#2F9B2C',

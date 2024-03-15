@@ -10,6 +10,7 @@ export const Container = styled.aside`
 	left: 0;
 	z-index: 1;
 	margin-top: 70px;
+	border-right: solid 1px ${(props) => props.theme.colors.line};
 	@media (min-width: 480px) and (max-width: 1160px) {
 		width: 50px;
 	}
