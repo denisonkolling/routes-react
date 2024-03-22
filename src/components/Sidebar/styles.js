@@ -30,13 +30,14 @@ export const NavbarLink = styled(Link)`
 	color: ${(props) => props.theme.colors.text};
 	padding-left: 15px;
 	box-sizing: border-box;
-	transition: all 0.5s ease;
 	text-decoration: none;
 	border-left: 5px solid transparent;
+	transition: all 0.8s ease;
 
 	&:hover {
 		background-color: ${(props) => props.theme.colors.hover};
 		border-left-color: ${(props) => props.theme.colors.logo};
+		border-bottom-color: ${(props) => props.theme.colors.logo};
 	}
 
 	@media (min-width: 480px) and (max-width: 1160px) {
@@ -49,6 +50,8 @@ export const NavbarLink = styled(Link)`
 		width: 100vw;
 		padding: 0px;
 		height: 50px;
+		border-left: 0px;
+		border-bottom: 5px solid transparent;
 	}
 `;
 

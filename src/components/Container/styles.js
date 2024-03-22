@@ -10,7 +10,7 @@ export const ContainerStyled = styled.div`
 	height: ${(props) => props.height || 'calc(100vh - 70px)'};
 	background-color: ${(props) => props.theme.colors.background};
 
-	@media (min-width: 480px) and (max-width: 1200px) {
+	@media (min-width: 480px) and (max-width: 1160px) {
 		margin-left: 50px;
 	}
 	@media (max-width: 510px) {
