@@ -8,7 +8,7 @@ export const ContainerStyled = styled.div`
 	flex-direction: column;
 	width: 100%;
 	height: ${(props) => props.height || 'calc(100vh - 70px)'};
-	background-color: ${(props) => props.color};
+	background-color: ${(props) => props.theme.colors.background};
 
 	@media (min-width: 480px) and (max-width: 1200px) {
 		margin-left: 50px;
