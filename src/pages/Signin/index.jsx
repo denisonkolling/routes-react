@@ -1,35 +1,37 @@
 import { Button, Input } from '../../components';
 import { useState } from 'react';
-import { useAuth } from "../../context/AuthContext"
+import { useAuth } from '../../context/AuthContext';
 import { Content, Label, LabelError, LabelSignin, Strong, Container } from './styles';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaRoute } from 'react-icons/fa';
-import { apiLogin } from "../../services/api"
+import { successNotification, errorNotification } from '../../services/notification';
 
 const Signin = () => {
-	const { login } = useAuth()
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [message, setMessage] = useState('');
+	const { login } = useAuth();
 	const navigate = useNavigate();
+	const [message, setMessage] = useState('');
 
-	const handleSignin = async (event) => {
-		event.preventDefault()
+	const [loginForm, setLoginForm] = useState({
+		username: '',
+		password: '',
+	});
 
-		try {
-				const response = apiLogin(email, password)
-				if (response.success) {
-						login(response)
-						navigate('/home')
-				} else {
-					setMessage(response);
-					return;
-				}
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setLoginForm((prevData) => ({ ...prevData, [name]: value }));
+	};
 
-		} catch (error) {
-				console.log(error)
-		}
-}
+	const handleSignIn = (loginForm) => {
+		console.log(loginForm);
+		login(loginForm)
+			.then((res) => {
+				navigate('/home');
+				console.log('Successfully logged in');
+			})
+			.catch((err) => {
+				errorNotification(err.code + err.response.data.message);
+			});
+	};
 
 	return (
 		<Container height="100vh">
@@ -42,20 +44,10 @@ const Signin = () => {
 					<br />
 					Sign in and start exploring.
 				</LabelSignin>
-				<Input
-					type="email"
-					value={email}
-					placeholder="Email"
-					onChange={(e) => [setEmail(e.target.value), setMessage('')]}
-				/>
-				<Input
-					type="password"
-					value={password}
-					placeholder="Password"
-					onChange={(e) => [setPassword(e.target.value), setMessage('')]}
-				/>
+				<Input type="email" placeholder="Enter your email address..." name="username" value={loginForm.username} onChange={handleChange} />
+				<Input type="password" placeholder="Enter your password..." name="password" value={loginForm.password} onChange={handleChange} />
 				<LabelError>{message}</LabelError>
-				<Button Text="Sign In" color="#2F9B2C" onClick={handleSignin}></Button>
+				<Button Text="Sign In" color="#2F9B2C" onClick={() => handleSignIn(loginForm)}></Button>
 				<LabelSignin>
 					Don't have an account?
 					<Strong>

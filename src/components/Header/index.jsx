@@ -4,8 +4,10 @@ import { FaRoute } from 'react-icons/fa';
 import { useAuth } from '../../context/AuthContext';
 import { FaRightFromBracket } from 'react-icons/fa6';
 
+
+
 const Header = () => {
-	const { logout } = useAuth();
+	const { logOut } = useAuth();
 
 	return (
 		<Container>
@@ -17,7 +19,7 @@ const Header = () => {
 				</HeaderLogoLink>
 			</HeaderItem>
 			<HeaderItem>
-				<HeaderLink to="/signin" onClick={logout}>
+				<HeaderLink to="/signin" onClick={logOut}>
 					<FaRightFromBracket />
 					<span>&nbsp;Logout</span>
 				</HeaderLink>

@@ -8,10 +8,10 @@ import Trails from '../pages/Trails';
 import Map from '../pages/Map';
 
 const RoutesApp = () => {
-	const { isAuthenticated } = useAuth();
+	const { isCustomerAuthenticated } = useAuth();
 
 	const loginRedirect = (children) => {
-		if (isAuthenticated) {
+		if (isCustomerAuthenticated) {
 			return <Navigate to="/home" replace />;
 		}
 
@@ -25,18 +25,14 @@ const RoutesApp = () => {
 			<Route path="/signin" element={loginRedirect(<Signin />)} />
 			<Route path="/signup" element={loginRedirect(<Signup />)} />
 			<Route path="/" exact element={<Home />} />
-			<Route path="/home" element={<Home />} />
-			<Route path="/weather" element={<Weather />} />
-			<Route path="/trails" element={<Trails />} />
-			<Route path="/map" element={<Map />} />
 
-			{isAuthenticated ? (
+			{isCustomerAuthenticated() ? (
 				<>
-					{/* <Route path="/" exact element={<Home />} />
 					<Route path="/home" element={<Home />} />
 					<Route path="/weather" element={<Weather />} />
+					<Route path="/weather" element={<Weather />} />
 					<Route path="/trails" element={<Trails />} />
-					<Route path="/map" element={<Map />} /> */}
+					<Route path="/map" element={<Map />} />
 				</>
 			) : (
 				<Route path="*" element={<Navigate replace to="/signin" />} />

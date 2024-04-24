@@ -13,7 +13,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 import React, { useContext } from 'react';
 
 const Sidebar = () => {
-	const { logout } = useAuth();
+	const { logOut } = useAuth();
 	const { theme, toggleTheme } = useContext(ThemeContext);
 
 	return (
@@ -38,7 +38,7 @@ const Sidebar = () => {
 				<FaUser />
 				<Span>Users</Span>
 			</NavbarLink>
-			<NavbarLink to="/signin" onClick={logout}>
+			<NavbarLink to="/signin" onClick={logOut}>
 				<FaRightFromBracket />
 				<Span>Logout</Span>
 			</NavbarLink>
