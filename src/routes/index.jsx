@@ -6,12 +6,13 @@ import Home from '../pages/Home';
 import Weather from '../pages/Weather';
 import Trails from '../pages/Trails';
 import Map from '../pages/Map';
+import UserProfile from '../pages/UserProfile';
 
 const RoutesApp = () => {
 	const { isCustomerAuthenticated } = useAuth();
 
 	const loginRedirect = (children) => {
-		if (isCustomerAuthenticated) {
+		if (isCustomerAuthenticated()) {
 			return <Navigate to="/home" replace />;
 		}
 
@@ -33,6 +34,7 @@ const RoutesApp = () => {
 					<Route path="/weather" element={<Weather />} />
 					<Route path="/trails" element={<Trails />} />
 					<Route path="/map" element={<Map />} />
+					<Route path="/user-profile" element={<UserProfile />} />
 				</>
 			) : (
 				<Route path="*" element={<Navigate replace to="/signin" />} />
