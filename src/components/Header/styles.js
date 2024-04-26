@@ -47,7 +47,9 @@ export const HeaderItem = styled.div`
 
 export const RightItems = styled.div`
   display: flex;
-  flex-direction: row;
+  @media (max-width: 510px) {
+    display: none;
+  }
 `;
 
 export const HeaderText = styled.span`
