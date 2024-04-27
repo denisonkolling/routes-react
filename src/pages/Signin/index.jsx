@@ -35,7 +35,7 @@ const Signin = () => {
     <Container height="100vh">
       <Content>
         <Label style={{ fontSize: "30px" }}>
-          <FaRoute style={{ color: "#2F9B2C" }} /> Routes React
+          <FaRoute style={{ color: "#2F9B2C" }} /> Trail Routes
         </Label>
         <LabelSignin>
           Welcome back

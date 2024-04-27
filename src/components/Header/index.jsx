@@ -12,7 +12,7 @@ const Header = () => {
         <HeaderLogoLink>
           {" "}
           <FaRoute />
-          &nbsp; React Routes
+          &nbsp; Trail Routes
         </HeaderLogoLink>
       </HeaderItem>
       <RightItems>
