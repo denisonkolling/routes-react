@@ -12,9 +12,7 @@ const Signup = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    age: "",
-    gender: "",
-    password: "",
+    password: ""
   });
 
   const handleChange = (e) => {
@@ -38,9 +36,7 @@ const Signup = () => {
     setFormData({
       name: "",
       email: "",
-      age: "",
-      gender: "",
-      password: "",
+      password: ""
     });
   };
 
@@ -63,20 +59,6 @@ const Signup = () => {
           placeholder="Enter your email address"
           name="email"
           value={formData.email}
-          onChange={handleChange}
-        />
-        <Input
-          type="number"
-          placeholder="Enter your age"
-          name="age"
-          value={formData.age}
-          onChange={handleChange}
-        />
-        <Input
-          type="text"
-          placeholder="Enter your gender"
-          name="gender"
-          value={formData.gender}
           onChange={handleChange}
         />
         <Input
