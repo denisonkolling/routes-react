@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const CardStyled = styled.div`
   width: 250px;
   height: 325px;
-  border: 1px solid #424242; //#EAF3EA
+  border: 1px solid ${(props) => props.theme.colors.line}; //#EAF3EA //#F0F2F5
   background-color: ${(props) => props.theme.colors.secondary};
   border-radius: 12px;
   overflow: hidden;
@@ -20,7 +20,6 @@ export const CardStyled = styled.div`
 export const ImageSection = styled.div`
   height: 50%;
   overflow: hidden;
-  border-bottom: 1px solid #e6ebf1;
   @media (max-width: 510px) {
     height: 32%;
   }
