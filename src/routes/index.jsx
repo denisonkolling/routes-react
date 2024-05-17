@@ -7,6 +7,7 @@ import Weather from '../pages/Weather';
 import Trails from '../pages/Trails';
 import Map from '../pages/Map';
 import UserProfile from '../pages/UserProfile';
+import CreateTrail from '../pages/CreateTrail';
 
 const RoutesApp = () => {
 	const { isCustomerAuthenticated } = useAuth();
@@ -33,6 +34,7 @@ const RoutesApp = () => {
 					<Route path="/weather" element={<Weather />} />
 					<Route path="/weather" element={<Weather />} />
 					<Route path="/trails" element={<Trails />} />
+					<Route path="/create-trail" element={<CreateTrail />} />
 					<Route path="/map" element={<Map />} />
 					<Route path="/user-profile" element={<UserProfile />} />
 				</>

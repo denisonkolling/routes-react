@@ -5,14 +5,14 @@ import {
   Container,
   Wrapper,
   Content,
-  Title,
   Card,
   CardContainer,
   Input,
+  Button,
 } from "../../components";
-import { InputWrapper, StyledFontAwesomeIcon } from "./styles";
-import img from "../../../public/screenshots/trail.jpg";
+import { InputWrapper, StyledFontAwesomeIcon, ButtonWrapper } from "./styles";
 import { trails_db } from "../../../db/trails_db";
+import { Link } from "react-router-dom";
 
 const Trails = () => {
   const [trails, setTrails] = useState(trails_db);
@@ -25,7 +25,6 @@ const Trails = () => {
         <Content>
           <InputWrapper>
             <Input
-              style={{ backgroundColor: "white" }}
               type="text"
               placeholder="Enter a city, park or trail..."
               // value={search}
@@ -33,7 +32,6 @@ const Trails = () => {
             />
             <StyledFontAwesomeIcon />
           </InputWrapper>
-
           <CardContainer>
             {trails.map((trail) => (
               <Card
@@ -46,6 +44,11 @@ const Trails = () => {
               />
             ))}
           </CardContainer>
+          <ButtonWrapper>
+            <Link to="/create-trail">
+              <Button Text="Create New Trail!"></Button>
+            </Link>
+          </ButtonWrapper>
         </Content>
       </Container>
     </Wrapper>
