@@ -8,6 +8,8 @@ export const lightTheme = {
 		success: '#135E01',
 		logo: '#2F9B2C',
 		hover: '#00000014',
+		danger: '#fe2e2e',
+		warning: '#FFD700',
 	},
 	fonts: {
 		regular: 'Inter, sans-serif',
@@ -24,6 +26,8 @@ export const darkTheme = {
 		success: '#135E01',
 		logo: '#2F9B2C',
 		hover: '#737977',
+		danger: '#CB2424',
+		warning: '#FFD700',
 	},
 	fonts: {
 		regular: 'Inter, sans-serif',
