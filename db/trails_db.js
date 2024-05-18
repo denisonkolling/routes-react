@@ -25,7 +25,7 @@ export const trails_db = [
     },
     {
       title: "Rocky Mountain",
-      location: "Rocky Mountain National Park",
+      location: "Rocky Mountain Forest",
       rate: "⭐⭐⭐⭐",
       reviews: "(189)",
       distance: "Length: 2.6 mi - Time: 2h 42min",
