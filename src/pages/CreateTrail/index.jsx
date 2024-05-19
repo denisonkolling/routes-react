@@ -18,8 +18,18 @@ const schema = yup
 	.object({
 		title: yup.string().required('Insert the trail name'),
 		location: yup.string().required('Insert the trail location'),
-		rate: yup.number().min(0).max(5).required('Insert the trail rate between 0 and 5'),
-		length: yup.number().required('Insert the trail length'),
+		rate: yup
+			.number()
+			.nullable()
+			.transform((value, original) => (original === '' ? null : value))
+			.min(0, 'Rate must be greater than or equal to 0')
+			.max(5, 'Rate must be less than or equal to 5')
+			.required('Insert the trail rate between 0 and 5'),
+		length: yup
+			.number()
+			.nullable()
+			.transform((value, original) => (original === '' ? null : value))
+			.required('Insert the trail length'),
 		time: yup.string().required('Insert the trail time'),
 		imageURL: yup.string().required('Insert the trail image url'),
 	})
