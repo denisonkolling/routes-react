@@ -5,8 +5,5 @@ export const CardContainerStyled = styled.div`
 	flex-wrap: wrap;
 	gap: 10px;
 	justify-content: center;
-
-	@media (max-width: 480px) {
-		flex-direction: column;
-	}
+	align-items: center;
 `;

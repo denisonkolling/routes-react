@@ -1,72 +1,58 @@
-import React from 'react';
-import {	Sidebar,	Header,	Container,	Wrapper,	Content,	Title,	Card,	CardContainer,	Input} from '../../components';
-import { InputWrapper, StyledFontAwesomeIcon } from './styles';
-import img from '../../../public/screenshots/trail.jpg'
+import { useState } from "react";
+import {
+  Sidebar,
+  Header,
+  Container,
+  Wrapper,
+  Content,
+  Card,
+  CardContainer,
+  Input,
+  Button,
+} from "../../components";
+import { InputWrapper, StyledFontAwesomeIcon, ButtonWrapper } from "./styles";
+import { trails_db } from "../../../db/trails_db";
+import { Link } from "react-router-dom";
 
 const Trails = () => {
-	return (
-		<Wrapper>
-			<Header />
-			<Sidebar />
-			<Container>
-				<Content>
-					<InputWrapper>
-						<Input
-							style={{ backgroundColor: 'white' }}
-							type="text"
-							placeholder="Enter a city, park or trail..."
-							// value={search}
-							// onChange={(e) => setSearch(e.target.value)}
-						/>
-						<StyledFontAwesomeIcon />
-					</InputWrapper>
-					
-					<CardContainer>
-						<Card image={img}>
-							<h1>⛺🌄🌅</h1>
-							<h3>Lake Tahoe</h3>
-							<p>Tahoe National Forest</p>
-							<p>⭐⭐⭐⭐</p>
-							<p>(246)</p>
-							<h6>Length 2.5mi - Time 2h 39m</h6>
-						</Card>
-						<Card image={img}>
-							<h1>⛺🌄🌅</h1>
-							<h3>Lake Tahoe</h3>
-							<p>Tahoe National Forest</p>
-							<p>⭐⭐⭐⭐</p>
-							<p>(246)</p>
-							<h6>Length 2.5mi - Time 2h 39m</h6>
-						</Card>
-						<Card image={img}>
-							<h1>⛺🌄🌅</h1>
-							<h3>Lake Tahoe</h3>
-							<p>Tahoe National Forest</p>
-							<p>⭐⭐⭐⭐</p>
-							<p>(246)</p>
-							<h6>Length 2.5mi - Time 2h 39m</h6>
-						</Card>
-						<Card image={img}>
-							<h1>⛺🌄🌅</h1>
-							<h3>Lake Tahoe</h3>
-							<p>Tahoe National Forest</p>
-							<p>⭐⭐⭐⭐</p>
-							<p>(246)</p>
-							<h6>Length 2.5mi - Time 2h 39m</h6>
-						</Card>
-						<Card image={img}>
-							<h1>⛺🌄🌅</h1>
-							<h3>Lake Tahoe</h3>
-							<p>Tahoe National Forest</p>
-							<p>⭐⭐⭐⭐</p>
-							<p>(246)</p>
-							<h6>Length 2.5mi - Time 2h 39m</h6>
-						</Card>
-					</CardContainer>
-				</Content>
-			</Container>
-		</Wrapper>
-	);
+  const [trails, setTrails] = useState(trails_db);
+
+  return (
+    <Wrapper>
+      <Header />
+      <Sidebar />
+      <Container>
+        <Content>
+          <InputWrapper>
+            <Input
+              type="text"
+              placeholder="Enter a city, park or trail..."
+              // value={search}
+              // onChange={(e) => setSearch(e.target.value)}
+            />
+            <StyledFontAwesomeIcon />
+          </InputWrapper>
+          <CardContainer>
+            {trails.map((trail) => (
+              <Card
+                image={trail.image}
+                title={trail.title}
+                location={trail.location}
+                rate={trail.rate}
+                reviews={trail.reviews}
+                distance={trail.distance}
+              />
+            ))}
+          </CardContainer>
+          <ButtonWrapper>
+            <Link to="/create-trail">
+              <Button Text="Create New Trail!"></Button>
+            </Link>
+          </ButtonWrapper>
+        </Content>
+      </Container>
+    </Wrapper>
+  );
 };
 
 export default Trails;

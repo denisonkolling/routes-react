@@ -1,27 +1,52 @@
-import { styled } from 'styled-components';
+import { styled } from "styled-components";
 
 export const CardStyled = styled.div`
-	width: 250px;
-	height: 325px;
-	background-color: ${(props) => props.theme.colors.secondary};
+  width: 250px;
+  height: 325px;
+  border: 1px solid ${(props) => props.theme.colors.line}; //#EAF3EA //#F0F2F5
+  background-color: ${(props) => props.theme.colors.secondary};
+  border-radius: 12px;
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: flex;
+  flex-direction: column;
 
-	border: 1px solid #e6ebf1;
-	background-color: #ffffff;
-	border-radius: 12px;
-	overflow: hidden;
-	border-top-left-radius: 12px;
-	border-top-right-radius: 12px;
-	display: flex;
-	flex-direction: column;
+  @media (max-width: 510px) {
+    width: 40vw;
+  }
 `;
 
 export const ImageSection = styled.div`
-	height: 50%;
-	overflow: hidden;
-	border-bottom: 1px solid #e6ebf1;
+  height: 50%;
+  overflow: hidden;
+  @media (max-width: 510px) {
+    height: 32%;
+  }
 `;
 
 export const ContentSection = styled.div`
-	padding: 5px 20px 20px;
-	height: 50%;
+  padding: 5px 20px 20px;
+  height: 50%;
+`;
+
+export const Title = styled.h3`
+  color: ${(props) => props.theme.colors.text};
+  margin-top: 0.5rem;
+`;
+
+export const Location = styled.p`
+  color: ${(props) => props.theme.colors.text};
+`;
+
+export const Rate = styled.p`
+  color: ${(props) => props.theme.colors.text};
+`;
+
+export const Reviews = styled.p`
+  color: ${(props) => props.theme.colors.text};
+`;
+
+export const Distance = styled.h6`
+  color: ${(props) => props.theme.colors.text};
 `;
