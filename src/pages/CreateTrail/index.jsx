@@ -13,6 +13,8 @@ import {
 	Button,
 } from '../../components';
 import { Subtitle, FormContainer } from './styles';
+import { saveTrail } from '../../services/trail';
+import { successNotification, errorNotification } from '../../services/notification';
 
 const schema = yup
 	.object({
@@ -42,6 +44,7 @@ const CreateTrail = () => {
 		control,
 		handleSubmit,
 		formState: { errors, isValid },
+		reset,
 	} = useForm({
 		resolver: yupResolver(schema),
 		mode: 'onChange',
@@ -56,14 +59,16 @@ const CreateTrail = () => {
 	});
 
 	const onSubmit = async (formData) => {
-		console.log(formData);
-
-		// try {
-		// 	const response = await api.post('/trails', formData);
-		// 	console.log(response.data);
-		// } catch (e) {
-		// 	alert('Error saving the route', e);
-		// }
+		saveTrail(formData)
+			.then(() => {
+				reset();
+				successNotification('Trail successfully saved!');
+				navigate('/trails');
+			})
+			.catch((err) => {
+				const errorMessage = `Error saving trail ${err.code} ${err.message}`;
+				errorNotification(errorMessage);
+			});
 	};
 
 	return (
