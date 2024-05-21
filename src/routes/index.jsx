@@ -16,7 +16,6 @@ const RoutesApp = () => {
 		if (isCustomerAuthenticated()) {
 			return <Navigate to="/home" replace />;
 		}
-
 		return children;
 	};
 
@@ -27,16 +26,17 @@ const RoutesApp = () => {
 			<Route path="/signin" element={loginRedirect(<Signin />)} />
 			<Route path="/signup" element={loginRedirect(<Signup />)} />
 			<Route path="/" exact element={<Home />} />
+			<Route path="/home" element={<Home />} />
+			<Route path="/weather" element={<Weather />} />
+			<Route path="/weather" element={<Weather />} />
+			<Route path="/trails" element={<Trails />} />
+			<Route path="/create-trail" element={<CreateTrail />} />
+			<Route path="/map" element={<Map />} />
+			<Route path="/user-profile" element={<UserProfile />} />
 
 			{isCustomerAuthenticated() ? (
 				<>
-					<Route path="/home" element={<Home />} />
-					<Route path="/weather" element={<Weather />} />
-					<Route path="/weather" element={<Weather />} />
-					<Route path="/trails" element={<Trails />} />
-					<Route path="/create-trail" element={<CreateTrail />} />
-					<Route path="/map" element={<Map />} />
-					<Route path="/user-profile" element={<UserProfile />} />
+				{/* Private routes when application is deployed */}
 				</>
 			) : (
 				<Route path="*" element={<Navigate replace to="/signin" />} />
