@@ -46,6 +46,20 @@ Project structure representation:
   <img alt="sign up page" src="./public/screenshots/signup.png" width="80%">
 </p>
 
+### 3. Trails List
+
+Project structure representation:
+<p align="center">
+  <img alt="sign up page" src="./public/screenshots/trails-list.jpg" width="80%">
+</p>
+
+### 3. Trails Form
+
+Project structure representation:
+<p align="center">
+  <img alt="sign up page" src="./public/screenshots/create-trail.jpg" width="80%">
+</p>
+
 
 ## 🚧 Prerequisites
 No prerequisites required.
